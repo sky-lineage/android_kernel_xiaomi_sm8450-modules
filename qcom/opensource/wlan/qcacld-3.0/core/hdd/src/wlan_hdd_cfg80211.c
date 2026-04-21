@@ -19562,9 +19562,8 @@ static void wlan_hdd_update_iface_combination(struct hdd_context *hdd_ctx,
 		j++;
 	}
 
-	wiphy->iface_combinations = hdd_ctx->combination;
-
-	wiphy->n_iface_combinations = j;
+	wiphy->iface_combinations = wlan_hdd_iface_combination;
+	wiphy->n_iface_combinations = ARRAY_SIZE(wlan_hdd_iface_combination);
 
 	wlan_hdd_dump_iface_combinations(wiphy->n_iface_combinations,
 					 wiphy->iface_combinations);
